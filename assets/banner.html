@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDA Pro XOR Analysis Banner</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .banner {
+    width: 1200px;
+    height: 400px;
+    background: linear-gradient(135deg, #0a0a0f 0%, #0d1117 40%, #0a0e1a 100%);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #1a2a4a;
+    display: flex;
+    align-items: center;
+    padding: 40px 60px;
+  }
+
+  /* Animated grid background */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 20s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(40px); }
+  }
+
+  /* Scanlines */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.15) 2px,
+      rgba(0,0,0,0.15) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Glow orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+  .orb-1 {
+    width: 500px; height: 500px;
+    background: #00ff88;
+    top: -200px; right: -100px;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  .orb-2 {
+    width: 300px; height: 300px;
+    background: #0080ff;
+    bottom: -150px; left: 200px;
+    animation: pulse 6s ease-in-out infinite reverse;
+  }
+  .orb-3 {
+    width: 200px; height: 200px;
+    background: #ff4444;
+    top: 50px; left: -50px;
+    animation: pulse 5s ease-in-out infinite 2s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.10; transform: scale(1); }
+    50% { opacity: 0.20; transform: scale(1.05); }
+  }
+
+  /* Corner decorations */
+  .corner {
+    position: absolute;
+    width: 30px; height: 30px;
+    border-color: #00ff88;
+    border-style: solid;
+    opacity: 0.6;
+  }
+  .corner-tl { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
+  .corner-tr { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
+  .corner-bl { bottom: 15px; left: 15px; border-width: 0 0 2px 2px; }
+  .corner-br { bottom: 15px; right: 15px; border-width: 0 2px 2px 0; }
+
+  /* Side accent lines */
+  .accent-line-left {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #00ff88, #0080ff, transparent);
+  }
+  .accent-line-right {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #0080ff, #00ff88, transparent);
+  }
+
+  /* Main content */
+  .content {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+  }
+
+  .tag-line {
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ff88;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .tag-line::before {
+    content: '// ';
+    color: #444;
+  }
+
+  .title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    color: #ffffff;
+    line-height: 1.1;
+    text-shadow: 0 0 30px rgba(0,255,136,0.3);
+    margin-bottom: 6px;
+  }
+
+  .title span {
+    color: #00ff88;
+    text-shadow: 0 0 20px rgba(0,255,136,0.6), 0 0 40px rgba(0,255,136,0.3);
+  }
+
+  .subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    color: #4a9eff;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+  }
+
+  .subtitle .sep { color: #333; margin: 0 8px; }
+
+  /* Terminal block */
+  .terminal {
+    background: rgba(0, 255, 136, 0.04);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    max-width: 520px;
+  }
+
+  .terminal .prompt { color: #00ff88; }
+  .terminal .cmd { color: #e0e0e0; }
+  .terminal .output { color: #4a9eff; margin-top: 4px; }
+  .terminal .result { color: #ffd700; }
+
+  /* Badge strip */
+  .badges {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .badge-green { background: rgba(0,255,136,0.1); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
+  .badge-blue { background: rgba(74,158,255,0.1); color: #4a9eff; border: 1px solid rgba(74,158,255,0.3); }
+  .badge-orange { background: rgba(255,160,50,0.1); color: #ffa032; border: 1px solid rgba(255,160,50,0.3); }
+  .badge-red { background: rgba(255,80,80,0.1); color: #ff5050; border: 1px solid rgba(255,80,80,0.3); }
+
+  /* Right side — hex display */
+  .hex-panel {
+    position: relative;
+    z-index: 10;
+    width: 320px;
+    margin-left: 40px;
+    flex-shrink: 0;
+  }
+
+  .hex-header {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #333;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #1a2a1a;
+  }
+
+  .hex-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    animation: fadeIn 0.5s ease both;
+  }
+
+  .hex-addr { color: #2a4a2a; width: 85px; }
+  .hex-enc { color: #ff5050; width: 28px; }
+  .hex-arrow { color: #333; }
+  .hex-dec { color: #00ff88; width: 28px; }
+  .hex-char { color: #ffd700; width: 20px; font-weight: bold; }
+
+  .hex-row:nth-child(2) { animation-delay: 0.1s; }
+  .hex-row:nth-child(3) { animation-delay: 0.2s; }
+  .hex-row:nth-child(4) { animation-delay: 0.3s; }
+  .hex-row:nth-child(5) { animation-delay: 0.4s; }
+  .hex-row:nth-child(6) { animation-delay: 0.5s; }
+  .hex-row:nth-child(7) { animation-delay: 0.6s; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .xor-key-label {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 3px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: #ffd700;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  /* Animated cursor */
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: #00ff88;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+  @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+  /* Bottom status bar */
+  .status-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 24px;
+    background: rgba(0,255,136,0.05);
+    border-top: 1px solid rgba(0,255,136,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 30px;
+    z-index: 20;
+  }
+
+  .status-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #2a5a2a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .status-item.active { color: #00ff88; }
+  .status-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #00ff88; margin-right: 5px; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+</style>
+</head>
+<body>
+<div class="banner">
+  <!-- Background elements -->
+  <div class="grid"></div>
+  <div class="scanlines"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Corner decorations -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+  <div class="accent-line-left"></div>
+  <div class="accent-line-right"></div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="tag-line">Static Malware Analysis · Reverse Engineering · IDA Pro</div>
+
+    <div class="title">
+      REVERSE<br>
+      <span>ENGINEERING</span>
+    </div>
+
+    <div class="subtitle">
+      XOR Password Cracking
+      <span class="sep">|</span>
+      IDA Pro Static Analysis
+      <span class="sep">|</span>
+      PE64 Binary
+    </div>
+
+    <div class="terminal">
+      <div><span class="prompt">$</span> <span class="cmd">python xor_decrypt.py --key 0x5A</span></div>
+      <div class="output">[*] Applying XOR with key: 0x5A (decimal 90)</div>
+      <div class="result">[+] Decrypted password: MalwareLab123 ✓<span class="cursor"></span></div>
+    </div>
+
+    <div class="badges">
+      <span class="badge badge-green">✓ Solved</span>
+      <span class="badge badge-blue">IDA Pro 7.x</span>
+      <span class="badge badge-orange">XOR 0x5A</span>
+      <span class="badge badge-red">Static Analysis</span>
+      <span class="badge badge-green">PE64</span>
+    </div>
+  </div>
+
+  <!-- Hex panel -->
+  <div class="hex-panel">
+    <div class="hex-header">ADDR        ENC    XOR    PLAIN</div>
+    <div class="hex-row">
+      <span class="hex-addr">140003000</span>
+      <span class="hex-enc">17h</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">4Dh</span>
+      <span class="hex-char">M</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">140003001</span>
+      <span class="hex-enc">3Bh</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">61h</span>
+      <span class="hex-char">a</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">140003002</span>
+      <span class="hex-enc">36h</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">6Ch</span>
+      <span class="hex-char">l</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">140003003</span>
+      <span class="hex-enc">2Dh</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">77h</span>
+      <span class="hex-char">w</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">140003004</span>
+      <span class="hex-enc">3Bh</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">61h</span>
+      <span class="hex-char">a</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">140003005</span>
+      <span class="hex-enc">28h</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">72h</span>
+      <span class="hex-char">r</span>
+    </div>
+    <div class="hex-row">
+      <span class="hex-addr">...</span>
+      <span class="hex-enc">...</span>
+      <span class="hex-arrow">→</span>
+      <span class="hex-dec">...</span>
+      <span class="hex-char">...</span>
+    </div>
+    <div class="xor-key-label">⚿ XOR KEY: 0x5A (90) — EXTRACTED FROM decrypt()</div>
+  </div>
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span class="status-item active"><span class="status-dot"></span>ANALYSIS COMPLETE</span>
+    <span class="status-item">IDA PRO 7.x · x86_64</span>
+    <span class="status-item">PASSWORD: MalwareLab123</span>
+    <span class="status-item">KEY: XOR 0x5A</span>
+    <span class="status-item">STATUS: CRACKED ✓</span>
+  </div>
+</div>
+</body>
+</html>

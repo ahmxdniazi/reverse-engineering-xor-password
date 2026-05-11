@@ -1,0 +1,367 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" width="1200" height="400">
+  <rect width="1200" height="400" fill="#1e2327"/>
+
+  <!-- Pixel font: each "pixel block" = 17x17px with 2px gap (19px stride) -->
+  <!-- Letter column width = 4 blocks + gaps = 75px total; letter spacing = 90px -->
+  <!-- Row 1: REVERSE (7 letters, x=30..630), Row 2: ENGINEERING (11 letters, centered) -->
+
+  <g fill="#e8e8e8" stroke="#1e2327" stroke-width="2">
+
+    <!-- ========== ROW 1: REVERSE ========== -->
+    <g transform="translate(30, 30)">
+
+      <!-- R -->
+      <g>
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- E -->
+      <g transform="translate(90,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- V -->
+      <g transform="translate(180,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="19" y="76"  width="17" height="17"/>
+        <rect x="38" y="76"  width="17" height="17"/>
+        <rect x="19" y="95"  width="17" height="17"/>
+        <rect x="38" y="95"  width="17" height="17"/>
+        <rect x="28" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- E -->
+      <g transform="translate(270,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- R -->
+      <g transform="translate(360,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- S -->
+      <g transform="translate(450,0)">
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- E -->
+      <g transform="translate(540,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+    </g><!-- end row 1 -->
+
+    <!-- ========== ROW 2: ENGINEERING ========== -->
+    <!-- 11 letters × 90px = 990px wide. Center in 1200px → start x = (1200-990)/2 = 105 -->
+    <g transform="translate(105, 220)">
+
+      <!-- E -->
+      <g>
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- N -->
+      <g transform="translate(90,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="19" y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- G -->
+      <g transform="translate(180,0)">
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- I -->
+      <g transform="translate(270,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="19" y="19"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="19" y="57"  width="17" height="17"/>
+        <rect x="19" y="76"  width="17" height="17"/>
+        <rect x="19" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- N -->
+      <g transform="translate(360,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="19" y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- E -->
+      <g transform="translate(450,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- E -->
+      <g transform="translate(540,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- R -->
+      <g transform="translate(630,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- I -->
+      <g transform="translate(720,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="19" y="19"  width="17" height="17"/>
+        <rect x="19" y="38"  width="17" height="17"/>
+        <rect x="19" y="57"  width="17" height="17"/>
+        <rect x="19" y="76"  width="17" height="17"/>
+        <rect x="19" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- N -->
+      <g transform="translate(810,0)">
+        <rect x="0"  y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="19" y="19"  width="17" height="17"/>
+        <rect x="57" y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="38" y="38"  width="17" height="17"/>
+        <rect x="57" y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="0"  y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+      <!-- G -->
+      <g transform="translate(900,0)">
+        <rect x="19" y="0"   width="17" height="17"/>
+        <rect x="38" y="0"   width="17" height="17"/>
+        <rect x="57" y="0"   width="17" height="17"/>
+        <rect x="0"  y="19"  width="17" height="17"/>
+        <rect x="0"  y="38"  width="17" height="17"/>
+        <rect x="0"  y="57"  width="17" height="17"/>
+        <rect x="38" y="57"  width="17" height="17"/>
+        <rect x="57" y="57"  width="17" height="17"/>
+        <rect x="0"  y="76"  width="17" height="17"/>
+        <rect x="57" y="76"  width="17" height="17"/>
+        <rect x="0"  y="95"  width="17" height="17"/>
+        <rect x="57" y="95"  width="17" height="17"/>
+        <rect x="19" y="114" width="17" height="17"/>
+        <rect x="38" y="114" width="17" height="17"/>
+        <rect x="57" y="114" width="17" height="17"/>
+      </g>
+
+    </g><!-- end row 2 -->
+
+  </g>
+</svg>
